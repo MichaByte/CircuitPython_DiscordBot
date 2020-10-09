@@ -11,7 +11,7 @@ A very simple Discord API for CircuitPython
 
 Dependencies
 =============
-This driver depends on:
+This library depends on:
 
 * `Adafruit CircuitPython <https://github.com/adafruit/circuitpython>`_
 * `JSON (built-in)
