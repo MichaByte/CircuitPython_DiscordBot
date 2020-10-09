@@ -1,21 +1,10 @@
 Introduction
 ============
 
-.. image:: https://readthedocs.org/projects/adafruit-circuitpython-discordbot/badge/?version=latest
-    :target: https://circuitpython.readthedocs.io/projects/discordbot/en/latest/
-    :alt: Documentation Status
-
 .. image:: https://img.shields.io/discord/327254708534116352.svg
     :target: https://adafru.it/discord
     :alt: Discord
 
-.. image:: https://github.com/2231puppy/Adafruit_CircuitPython_DiscordBot/workflows/Build%20CI/badge.svg
-    :target: https://github.com/2231puppy/Adafruit_CircuitPython_DiscordBot/actions
-    :alt: Build Status
-
-.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
-    :target: https://github.com/psf/black
-    :alt: Code Style: Black
 
 A very simple Discord API for CircuitPython
 
@@ -25,7 +14,8 @@ Dependencies
 This driver depends on:
 
 * `Adafruit CircuitPython <https://github.com/adafruit/circuitpython>`_
-
+* `JSON (built-in)
+* Either `Adafruit Requests` or `Python requests`
 Please ensure all dependencies are available on the CircuitPython filesystem.
 This is easily achieved by downloading
 `the Adafruit library and driver bundle <https://circuitpython.org/libraries>`_.
@@ -34,31 +24,6 @@ Installing from PyPI
 =====================
 .. note:: This library is not available on PyPI yet. Install documentation is included
    as a standard element. Stay tuned for PyPI availability!
-
-.. todo:: Remove the above note if PyPI version is/will be available at time of release.
-   If the library is not planned for PyPI, remove the entire 'Installing from PyPI' section.
-
-On supported GNU/Linux systems like the Raspberry Pi, you can install the driver locally `from
-PyPI <https://pypi.org/project/adafruit-circuitpython-discordbot/>`_. To install for current user:
-
-.. code-block:: shell
-
-    pip3 install adafruit-circuitpython-discordbot
-
-To install system-wide (this may be required in some cases):
-
-.. code-block:: shell
-
-    sudo pip3 install adafruit-circuitpython-discordbot
-
-To install in a virtual environment in your current project:
-
-.. code-block:: shell
-
-    mkdir project-name && cd project-name
-    python3 -m venv .env
-    source .env/bin/activate
-    pip3 install adafruit-circuitpython-discordbot
 
 Usage Example
 =============
