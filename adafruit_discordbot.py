@@ -39,5 +39,9 @@ __repo__ = "https://github.com/2231puppy/Adafruit_CircuitPython_DiscordBot.git"
 class DiscordBot:
     def __init__(self, key):
         self.key = key
-    def get_msg(self, channel):
-        requests.get("https://discord.com/api/v8/channels/"+channel+"/messages")
+    def get_msg(self, channel, msg):
+        r=requests.get("https://discord.com/api/v8/channels/"+channel+"/messages")
+        jsonified_r=json.loads(r.content.decode())
+        return jsonified_r[msg]['content']
+    def send_msg(self, channel, msg):
+        r=requests.post("https://discord.com/api/v8/channels/"+channel+"/messages", data={'content' : msg})
