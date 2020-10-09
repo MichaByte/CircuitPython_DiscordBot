@@ -44,4 +44,4 @@ class DiscordBot:
         jsonified_r=json.loads(r.content.decode())
         return jsonified_r[msg]['content']
     def send_msg(self, channel, msg):
-        r=requests.post("https://discord.com/api/v8/channels/"+channel+"/messages", data={'content' : msg})
+        requests.post("https://discord.com/api/v8/channels/"+channel+"/messages", data={'content' : msg})
