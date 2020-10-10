@@ -37,12 +37,11 @@ import json
 import adafruit_requests as requests
 
 __version__ = "0.0.0-auto.0"
-__repo__ = "https://github.com/2231puppy/Adafruit_CircuitPython_DiscordBot.git"
+__repo__ = "https://github.com/2231puppy/CircuitPython_DiscordBot.git"
 
 
 class DiscordBot:
     """DiscordBot Class"""
-
     def __init__(self, key, webhook):
         self.key = key
         self.r = None
