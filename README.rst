@@ -8,13 +8,15 @@ Introduction
 
 A very simple Discord API for CircuitPython
 
+Sadly, I couldn't figure out how to send messages with bots without something complex (feel free to leave an issue if you know how), so to send messages, I utilize a webhook.
+
 
 Dependencies
 =============
 This library depends on:
 
 * `Adafruit CircuitPython <https://github.com/adafruit/circuitpython>`_
-* `JSON (built-in)
+* `JSON (built-in)`
 * Either `Adafruit Requests` or `Python requests`
 Please ensure all dependencies are available on the CircuitPython filesystem.
 This is easily achieved by downloading
@@ -28,7 +30,14 @@ Installing from PyPI
 Usage Example
 =============
 
-.. todo:: Add a quick, simple example. It and other examples should live in the examples folder and be included in docs/examples.rst.
+First, create a bot and a webhook for your server (Google is your friend, more tutorials later). Then, import the library like so:
+
+`from discordbot import DiscordBot`
+
+And to test it:
+
+```bot=DiscordBot(YOUR_BOT_TOKEN, YOUR_WEBHOOK_URL)
+bot.send_msg('Hello, world!')
 
 Contributing
 ============
