@@ -37,11 +37,14 @@ __version__ = "0.0.0-auto.0"
 __repo__ = "https://github.com/2231puppy/Adafruit_CircuitPython_DiscordBot.git"
 
 class DiscordBot:
-    def __init__(self, key):
+    def __init__(self, key, webhook):
         self.key = key
+        self.r=None
+        self.jsonified=None
+        self.webhook=webhook
     def get_msg(self, channel, msg):
-        r=requests.get("https://discord.com/api/v8/channels/"+channel+"/messages")
-        jsonified_r=json.loads(r.content.decode())
-        return jsonified_r[msg]['content']
-    def send_msg(self, channel, msg):
-        requests.post("https://discord.com/api/v8/channels/"+channel+"/messages", data={'content' : msg})
+        self.r=requests.get("https://discord.com/api/v8/channels/"+channel+"/messages", headers={'Authorization' : 'Bot '+self.key})
+        self.jsonified_r=json.loads(self.r.content.decode('utf-8'))
+        return self.jsonified_r[msg]['content']
+    def send_msg(self, msg):
+        requests.post(self.webhook, {'content' : msg})
