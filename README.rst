@@ -33,7 +33,7 @@ Usage Example
 
 First, create a bot and a webhook for your server (Google is your friend, more tutorials later). Then, import the library like so:
 
-``from discordbot import DiscordBot``
+``from adafruit_discordbot import DiscordBot``
 
 And to test it:
 
