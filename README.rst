@@ -32,12 +32,12 @@ Usage Example
 
 First, create a bot and a webhook for your server (Google is your friend, more tutorials later). Then, import the library like so:
 
-`from discordbot import DiscordBot`
+``from discordbot import DiscordBot``
 
 And to test it:
 
-```bot=DiscordBot(YOUR_BOT_TOKEN, YOUR_WEBHOOK_URL)
-bot.send_msg('Hello, world!')
+``bot=DiscordBot(YOUR_BOT_TOKEN, YOUR_WEBHOOK_URL)``
+``bot.send_msg('Hello, world!')``
 
 Contributing
 ============
