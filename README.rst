@@ -9,6 +9,7 @@ Introduction
 A very simple Discord API for CircuitPython
 
 Sadly, I couldn't figure out how to send messages with bots without something complex (feel free to leave an issue if you know how), so to send messages, I utilize a webhook.
+
 Whenever I mention the Channel ID, you will need to right click on the Discord channel and click Copy ID. If it doesn't show itself, fear not! Open your Discord settings, go to Appearence, scroll down, turn on Development Mode, and try again.
 
 Dependencies
@@ -37,6 +38,7 @@ First, create a bot and a webhook for your server (Google is your friend, more t
 And to test it:
 
 ``bot=DiscordBot(YOUR_BOT_TOKEN, YOUR_WEBHOOK_URL)``
+
 ``bot.send_msg('Hello, world!')``
 
 Contributing
