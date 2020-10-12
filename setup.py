@@ -30,13 +30,13 @@ setup(
     long_description=long_description,
     long_description_content_type="text/x-rst",
     # The project's main homepage.
-    url="https://github.com/adafruit/Adafruit_CircuitPython_DiscordBot",
+    url="https://github.com/2231puppy/CircuitPython_DiscordBot",
     # Author details
-    author="Adafruit Industries",
-    author_email="circuitpython@adafruit.com",
+    author="2231puppy",
+    author_email="2231puppy@gmail.com",
     install_requires=[
         "Adafruit-Blinka",
-        "adafruit-requests",
+        "adafruit-circuitpython-requests",
     ],
     # Choose your license
     license="MIT",

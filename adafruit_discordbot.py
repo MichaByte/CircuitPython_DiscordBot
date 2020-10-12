@@ -57,6 +57,9 @@ class DiscordBot:
         self.jsonified_r = json.loads(self.r.content.decode("utf-8"))
         return self.jsonified_r[msg]["content"]
 
+    def gen_embed(self, title, content, color=0):
+        return '''{"embeds": [{"title": "'''+title+'''","description": "'''+content+'''","color": '''+color+'''}]}'''
+
     def send_msg(self, msg):
         """Sends a webhook message."""
         requests.post(self.webhook, {"content": msg})
