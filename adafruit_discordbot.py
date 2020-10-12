@@ -67,6 +67,6 @@ class DiscordBot:
         requests.post(self.webhook, {"payload_json" : self.embed})
 
     def send_msg(self, msg, tts=False):
-        """Sends a webhook message."""
+        """Sends a webhook message. Specify True at the end for TTS."""
         requests.post(self.webhook, {"content" : msg, "tts" : tts})
 
