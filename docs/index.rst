@@ -21,7 +21,9 @@ Table of Contents
     api
 
 .. toctree::
-    :caption: Tutorials
+    :caption: Setup
+
+    setup
 
 .. todo:: Add any Learn guide links here. If there are none, then simply delete this todo and leave
     the toctree above for use later.
