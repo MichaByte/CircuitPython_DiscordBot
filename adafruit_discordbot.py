@@ -58,8 +58,12 @@ class DiscordBot:
         return self.jsonified_r[msg]["content"]
 
     def gen_embed(self, title, content, color=0):
+        '''A simple embed generator. Use https://www.shodor.org/stella2java/rgbint.html to generate the color integer.'''
         return '''{"embeds": [{"title": "'''+title+'''","description": "'''+content+'''","color": '''+color+'''}]}'''
 
-    def send_msg(self, msg):
+    def send_msg(self, msg, embed=None):
         """Sends a webhook message."""
-        requests.post(self.webhook, {"content": msg})
+        if embed == None:
+            requests.post(self.webhook, {"content": msg})
+        else:
+            requests.post(self.webhook, embed)
