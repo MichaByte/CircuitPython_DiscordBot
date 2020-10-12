@@ -65,5 +65,6 @@ class DiscordBot:
         """Sends a webhook message."""
         if embed == None:
             requests.post(self.webhook, {"content": msg})
+#Not working yet
         else:
             requests.post(self.webhook, embed)
