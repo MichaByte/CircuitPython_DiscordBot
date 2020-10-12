@@ -50,14 +50,14 @@ class DiscordBot:
         self.embed = None
 
     def get_msg(self, channel, msg, get_author=False):
-        """Gets a message from the channel. Use 0 for latest."""
+        """Gets a message from the channel. Use 0 for latest. Specify True at the end of the function to return the username of the sender instead."""
         self.r = requests.get(
             "https://discord.com/api/v8/channels/" + channel + "/messages",
             headers={"Authorization": "Bot " + self.key},
         )
         self.jsonified_r = json.loads(self.r.content.decode("utf-8"))
         if get_author==True:
-            return self.jsonified_r[msg]["author"]["username"]
+            return self.jsonified_r[msg]["author"]["username"]+"#"+str(self.jsonified_r[msg]["author"]["discriminator"])
         else:
             return self.jsonified_r[msg]["content"]
 
