@@ -31,9 +31,12 @@ Installing from PyPI
 Usage Example
 =============
 
-First, create a bot and a webhook for your server (Google is your friend, more tutorials later). Then, import the library like so:
+First, create a bot and a webhook for your server (Read my ReadTheDocs). Then, import the library like so:
+``esp32 setup, blah blah blah...``
+
 
 ``from adafruit_discordbot import DiscordBot``
+
 
 And to test it:
 

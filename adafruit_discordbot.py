@@ -39,6 +39,12 @@ import adafruit_requests as requests
 __version__ = "0.0.0-auto.0"
 __repo__ = "https://github.com/2231puppy/CircuitPython_DiscordBot.git"
 
+try:
+    requests.set_socket(socket, esp)
+except:
+    print("ESP not configured properly, is esp32spi socket imported and the esp variable set to the device?")
+    raise
+
 
 class DiscordBot:
     """DiscordBot Class"""
