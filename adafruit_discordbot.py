@@ -48,14 +48,18 @@ class DiscordBot:
         self.jsonified_r = None
         self.webhook = webhook
         self.embed = None
-    def get_msg(self, channel, msg):
+
+    def get_msg(self, channel, msg, get_author=False):
         """Gets a message from the channel. Use 0 for latest."""
         self.r = requests.get(
             "https://discord.com/api/v8/channels/" + channel + "/messages",
             headers={"Authorization": "Bot " + self.key},
         )
         self.jsonified_r = json.loads(self.r.content.decode("utf-8"))
-        return self.jsonified_r[msg]["content"]
+        if get_author==True:
+            return self.jsonified_r[msg]["author"]["username"]
+        else:
+            return self.jsonified_r[msg]["content"]
 
     def send_embed(self, title, content, color=0):
         '''Sends an embed message. Use https://www.shodor.org/stella2java/rgbint.html to generate the color integer.'''
