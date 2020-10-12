@@ -47,7 +47,7 @@ class DiscordBot:
         self.r = None
         self.jsonified_r = None
         self.webhook = webhook
-
+        self.embed = None
     def get_msg(self, channel, msg):
         """Gets a message from the channel. Use 0 for latest."""
         self.r = requests.get(
@@ -57,14 +57,12 @@ class DiscordBot:
         self.jsonified_r = json.loads(self.r.content.decode("utf-8"))
         return self.jsonified_r[msg]["content"]
 
-    def gen_embed(self, title, content, color=0):
-        '''A simple embed generator. Use https://www.shodor.org/stella2java/rgbint.html to generate the color integer.'''
-        return '''{"embeds": [{"title": "'''+title+'''","description": "'''+content+'''","color": '''+color+'''}]}'''
+    def send_embed(self, title, content, color=0):
+        '''Sends an embed message. Use https://www.shodor.org/stella2java/rgbint.html to generate the color integer.'''
+        self.embed = '''{"embeds": [{"title": "'''+title+'''","description": "'''+content+'''","color": '''+str(color)+'''}]}'''
+        requests.post(self.webhook, {"payload_json" : self.embed})
 
-    def send_msg(self, msg, embed=None):
+    def send_msg(self, msg):
         """Sends a webhook message."""
-        if embed == None:
-            requests.post(self.webhook, {"content": msg})
-#Not working yet
-        else:
-            requests.post(self.webhook, embed)
+        requests.post(self.webhook, {"content": msg})
+
