@@ -34,8 +34,8 @@ Usage Example
 First, create a bot and a webhook for your server (Read my ReadTheDocs). Then, import the library like so:
 
 
-``
-import board
+
+```import board
 import busio
 from digitalio import DigitalInOut
 import adafruit_esp32spi.adafruit_esp32spi_socket as socket
@@ -70,7 +70,7 @@ esp32_reset = DigitalInOut(board.ESP_RESET)
 
 spi = busio.SPI(board.SCK, board.MOSI, board.MISO)
 esp = adafruit_esp32spi.ESP_SPIcontrol(spi, esp32_cs, esp32_ready, esp32_reset)
-``
+```
 
 
 ``from adafruit_discordbot import DiscordBot``
