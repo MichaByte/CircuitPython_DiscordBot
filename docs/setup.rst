@@ -32,4 +32,5 @@ How to set up
   a. Click the gear next to your Discord username.
   b. Click Appearance on the side menu.
   c. Scroll down and turn on Developer Mode.
-  d. Using the API key and webhook URL from earlier, write your CircuitPython code according to the documentation!
+  d. Exit the server settings by clicking on the X. Right-click the channel that you want your bot to "live" in, and you will see a new option - Copy ID! Click that and save it for later,
+  e. Using the API key, channel ID, and webhook URL from earlier, write your CircuitPython code according to the documentation!
