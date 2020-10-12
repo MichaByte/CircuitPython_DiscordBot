@@ -38,6 +38,7 @@ First, create a bot and a webhook for your server (Read my ReadTheDocs). Then, i
     from digitalio import DigitalInOut
     import adafruit_esp32spi.adafruit_esp32spi_socket as socket
     from adafruit_esp32spi import adafruit_esp32spi
+    from adafruit_discordbot import DiscordBot
 
     # Get wifi details and more from a secrets.py file
     try:
@@ -70,14 +71,10 @@ First, create a bot and a webhook for your server (Read my ReadTheDocs). Then, i
     esp = adafruit_esp32spi.ESP_SPIcontrol(spi, esp32_cs, esp32_ready, esp32_reset)
 
 
-``from adafruit_discordbot import DiscordBot``
+And to test it::
 
-
-And to test it:
-
-``bot=DiscordBot(YOUR_BOT_TOKEN, YOUR_WEBHOOK_URL)``
-
-``bot.send_msg('Hello, world!')``
+    bot=DiscordBot(YOUR_BOT_TOKEN, YOUR_WEBHOOK_URL)
+    bot.send_msg('Hello, world!')
 
 Contributing
 ============
