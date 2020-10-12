@@ -66,7 +66,7 @@ class DiscordBot:
         self.embed = '''{"embeds": [{"title": "'''+title+'''","description": "'''+content+'''","color": '''+str(color)+'''}]}'''
         requests.post(self.webhook, {"payload_json" : self.embed})
 
-    def send_msg(self, msg):
+    def send_msg(self, msg, tts=False):
         """Sends a webhook message."""
-        requests.post(self.webhook, {"content": msg})
+        requests.post(self.webhook, {"content" : msg, "tts" : tts})
 
