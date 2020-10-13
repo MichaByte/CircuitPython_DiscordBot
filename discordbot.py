@@ -10,34 +10,11 @@ A very simple Discord API for CircuitPython
 
 
 * Author(s): 2231puppy
-
-Implementation Notes
---------------------
-
-**Hardware:**
-
-.. todo:: Add links to any specific hardware product page(s), or category page(s).
-Use unordered list & hyperlink rST
-   inline format: "* `Link Text <url>`_"
-
-**Software and Dependencies:**
-
-* Adafruit CircuitPython firmware for the supported boards:
-  https://github.com/adafruit/circuitpython/releases
-
-.. todo:: Uncomment or remove the Bus Device and/or the Register library
-dependencies based on the library's use of either.
-
-# * Adafruit's Bus Device library: https://github.com/adafruit/Adafruit_CircuitPython_BusDevice
-# * Adafruit's Register library: https://github.com/adafruit/Adafruit_CircuitPython_Register
 """
 
 # imports
 import json
 import adafruit_requests as requests
-
-__version__ = "0.0.0-auto.0"
-__repo__ = "https://github.com/2231puppy/CircuitPython_DiscordBot.git"
 
 class DiscordBot:
     """DiscordBot Class"""
@@ -47,11 +24,6 @@ class DiscordBot:
         self.jsonified_r = None
         self.webhook = webhook
         self.embed = None
-        try:
-            requests.set_socket(socket, esp)
-        except:
-            print("ESP not configured properly, is esp32spi socket imported and the esp variable set to the device?")
-            raise
 
     def get_msg(self, channel, msg, get_author=False):
         """Gets a message from the channel. Use 0 for latest. Specify True at the end of the function to return the username of the sender instead."""
