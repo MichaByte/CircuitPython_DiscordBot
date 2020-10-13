@@ -12,6 +12,8 @@ Sadly, I couldn't figure out how to send messages with bots without something co
 
 Whenever I mention the Channel ID, you will need to right click on the Discord channel and click Copy ID. If it doesn't show itself, fear not! Open your Discord settings, go to Appearence, scroll down, turn on Development Mode, and try again.
 
+Check https://adafruit.com/wishlists?wid=511551 for compatible boards.
+
 Dependencies
 =============
 This library depends on:
