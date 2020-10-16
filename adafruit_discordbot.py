@@ -35,7 +35,6 @@ dependencies based on the library's use of either.
 # imports
 import json
 import adafruit_requests as requests
-
 __version__ = "0.0.0-auto.0"
 __repo__ = "https://github.com/2231puppy/CircuitPython_DiscordBot.git"
 
@@ -47,12 +46,6 @@ class DiscordBot:
         self.jsonified_r = None
         self.webhook = webhook
         self.embed = None
-        try:
-            requests.set_socket(socket, esp)
-        except:
-            print("ESP not configured properly, is esp32spi socket imported and the esp variable set to the device?")
-            raise
-
     def get_msg(self, channel, msg, get_author=False):
         """Gets a message from the channel. Use 0 for latest. Specify True at the end of the function to return the username of the sender instead."""
         self.r = requests.get(
