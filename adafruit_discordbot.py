@@ -35,7 +35,7 @@ dependencies based on the library's use of either.
 # imports
 import json
 import adafruit_requests as requests
-__version__ = "0.0.0-auto.0"
+__version__ = "1.1.3"
 __repo__ = "https://github.com/2231puppy/CircuitPython_DiscordBot.git"
 
 class DiscordBot:
@@ -62,9 +62,9 @@ class DiscordBot:
     def send_embed(self, title, content, color=0):
         '''Sends an embed message. Use https://www.shodor.org/stella2java/rgbint.html to generate the color integer.'''
         self.embed = '''{"embeds": [{"title": "'''+title+'''","description": "'''+content+'''","color": '''+str(color)+'''}]}'''
-        requests.post(self.webhook, {"payload_json" : self.embed})
+        requests.post(self.webhook, json={"payload_json" : self.embed})
 
     def send_msg(self, msg, tts=False):
         """Sends a webhook message. Specify True at the end for TTS."""
-        requests.post(self.webhook, {"content" : msg, "tts" : tts})
+        requests.post(self.webhook, json={"content" : msg, "tts" : tts})
 
