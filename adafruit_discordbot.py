@@ -40,12 +40,13 @@ __repo__ = "https://github.com/2231puppy/CircuitPython_DiscordBot.git"
 
 class DiscordBot:
     """DiscordBot Class"""
-    def __init__(self, key, webhook):
+    def __init__(self, key, webhook, socket, esp):
         self.key = key
         self.r = None
         self.jsonified_r = None
         self.webhook = webhook
         self.embed = None
+        requests.set_socket(socket, esp)
     def get_msg(self, channel, msg, get_author=False):
         """Gets a message from the channel. Use 0 for latest. Specify True at the end of the function to return the username of the sender instead."""
         self.r = requests.get(
