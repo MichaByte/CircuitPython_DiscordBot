@@ -38,12 +38,11 @@ esp32_reset = DigitalInOut(board.ESP_RESET)
 spi = busio.SPI(board.SCK, board.MOSI, board.MISO)
 esp = adafruit_esp32spi.ESP_SPIcontrol(spi, esp32_cs, esp32_ready, esp32_reset)
 
-requests.set_socket(socket, esp)
 key = "YOUR_API_KEY"
 webhook = "YOUR_WEBHOOK_URL"
 channel = "YOUR_CHAN_ID"
 
-bot = DiscordBot(key, webhook)
+bot = DiscordBot(key, webhook, socket, esp)
 
 bot.send_msg("Hello, world!")
 
