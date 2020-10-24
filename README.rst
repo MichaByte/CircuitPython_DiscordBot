@@ -75,7 +75,7 @@ First, create a bot and a webhook for your server (Read my ReadTheDocs). Then, i
 
 And to test it::
 
-    bot=DiscordBot(YOUR_BOT_TOKEN, YOUR_WEBHOOK_URL)
+    bot=DiscordBot(YOUR_BOT_TOKEN, YOUR_WEBHOOK_URL, socket, esp)
     bot.send_msg('Hello, world!')
 
 Contributing
